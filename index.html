@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Elradi Gabraldar Elradi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Elradi Gabraldar Elradi, Software Engineer in Riyadh. Full-stack (Next.js) and mobile (React Native, Flutter) developer building Arabic-first, bilingual products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout: a calm engineer's spec sheet. Hero with a fact panel, then filterable project grid, timeline, skills, contact. */
+  :root {
+    --bg:#f4f6f9; --surface:#ffffff; --ink:#0f1b2b; --muted:#5a6678; --line:#dde3ec;
+    --accent:#1d5fa8; --accent-soft:#e7eef8; --accent-ink:#ffffff; --good:#0f7b6c;
+    --f-display:"Sora", "Segoe UI", system-ui, sans-serif;
+    --f-body:"Manrope", "Segoe UI", system-ui, sans-serif;
+    --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    --f-ar:"IBM Plex Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+    --radius:10px; --wrap:1080px;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg:#0b121c; --surface:#111a27; --ink:#e6ecf4; --muted:#98a4b6; --line:#223046;
+    --accent:#6ea8ee; --accent-soft:#15253a; --accent-ink:#0b121c; --good:#4cc3ae; color-scheme:dark; } }
+  :root[data-theme="dark"] {
+    --bg:#0b121c; --surface:#111a27; --ink:#e6ecf4; --muted:#98a4b6; --line:#223046;
+    --accent:#6ea8ee; --accent-soft:#15253a; --accent-ink:#0b121c; --good:#4cc3ae; color-scheme:dark; }
+
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+  .wrap { max-width:var(--wrap); margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+
+  /* top bar */
+  body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:10; background:var(--bg); }
+  .bar { position:sticky; top:env(safe-area-inset-top, 0px); z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .bar .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px; }
+  .mark { font-family:var(--f-display); font-weight:700; font-size:15px; color:var(--ink); display:flex; align-items:center; gap:10px; }
+  .mark span.mono { width:30px; height:30px; border-radius:8px; background:var(--accent); color:var(--accent-ink); display:grid; place-items:center; font-size:13px; letter-spacing:.5px; }
+  .nav { display:flex; gap:22px; font-size:14px; font-weight:500; }
+  .nav a { color:var(--muted); }
+  .nav a:hover { color:var(--ink); text-decoration:none; }
+  @media (max-width:640px) { .nav { display:none; } }
+
+  /* hero */
+  .hero { padding-block:64px 48px; display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:48px; align-items:start; }
+  @media (max-width:860px) { .hero { grid-template-columns:1fr; gap:32px; padding-block:40px 32px; } }
+  .ar-name { font-family:var(--f-ar); font-weight:600; font-size:18px; color:var(--muted); margin:0 0 6px; }
+  h1 { font-family:var(--f-display); font-size:clamp(34px, 5.4vw, 54px); line-height:1.08; letter-spacing:-1.2px; margin:0; text-wrap:balance; }
+  .role { font-family:var(--f-display); font-weight:500; font-size:clamp(18px, 2.2vw, 22px); color:var(--accent); margin:14px 0 18px; }
+  .lede { color:var(--muted); font-size:17px; max-width:60ch; margin:0 0 28px; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:8px; font-weight:600; font-size:15px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; font-family:inherit; }
+  .btn:hover { text-decoration:none; border-color:var(--accent); }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .btn svg { width:16px; height:16px; }
+
+  .spec { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; font-size:14px; }
+  .spec h2 { font-family:var(--f-mono); font-size:12px; font-weight:500; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+  .spec dl { margin:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px 18px; }
+  .spec dt { color:var(--muted); font-family:var(--f-mono); font-size:12.5px; padding-top:2px; }
+  .spec dd { margin:0; font-weight:600; }
+  .status { display:inline-flex; align-items:center; gap:7px; }
+  .status::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--good); box-shadow:0 0 0 3px color-mix(in srgb, var(--good) 22%, transparent); }
+
+  /* sections */
+  section { padding-block:56px; border-top:1px solid var(--line); }
+  .sec-head { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px 24px; margin-bottom:28px; }
+  .sec-head h2 { font-family:var(--f-display); font-size:28px; letter-spacing:-.5px; margin:0; }
+  .sec-head p { margin:0; color:var(--muted); max-width:52ch; }
+
+  /* filters */
+  .filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+  .chip { font-family:var(--f-body); font-size:14px; font-weight:600; padding:7px 14px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--muted); cursor:pointer; }
+  .chip[aria-pressed="true"] { background:var(--ink); border-color:var(--ink); color:var(--bg); }
+  .chip .n { font-family:var(--f-mono); font-weight:400; font-size:12px; opacity:.7; margin-left:4px; }
+
+  /* projects */
+  .grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; }
+  @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column; gap:12px; min-width:0; }
+  .card.feature { grid-column:1 / -1; }
+  .card .kind { font-family:var(--f-mono); font-size:12px; color:var(--accent); display:flex; gap:10px; flex-wrap:wrap; }
+  .card h3 { font-family:var(--f-display); font-size:20px; letter-spacing:-.2px; margin:0; line-height:1.3; }
+  .card h3 .ar { font-family:var(--f-ar); font-weight:500; color:var(--muted); font-size:17px; }
+  .card p { margin:0; color:var(--muted); }
+  .card ul { margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; }
+  .feature-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px 32px; }
+  @media (max-width:760px) { .feature-body { grid-template-columns:1fr; } }
+  .stack { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:6px; }
+  .stack span { font-family:var(--f-mono); font-size:12px; padding:3px 8px; border-radius:6px; background:var(--accent-soft); color:var(--ink); }
+
+  .earlier { margin-top:40px; }
+  .earlier h3 { font-family:var(--f-display); font-size:18px; margin:0 0 14px; }
+  .rows { display:grid; gap:0; border-top:1px solid var(--line); }
+  .row { display:grid; grid-template-columns:90px minmax(0,1fr); gap:16px; padding-block:14px; border-bottom:1px solid var(--line); }
+  .row time { font-family:var(--f-mono); font-size:13px; color:var(--muted); padding-top:2px; font-variant-numeric:tabular-nums; }
+  .row b { display:block; }
+  .row span { color:var(--muted); font-size:15px; }
+  .badge { display:inline-block; font-family:var(--f-mono); font-size:11.5px; padding:2px 8px; border-radius:999px; background:color-mix(in srgb, var(--good) 16%, transparent); color:var(--good); margin-left:6px; vertical-align:2px; }
+
+  /* experience */
+  .timeline { display:grid; gap:0; }
+  .job { display:grid; grid-template-columns:200px minmax(0,1fr); gap:24px; padding-block:24px; border-bottom:1px solid var(--line); }
+  .job:first-child { padding-top:0; }
+  .job:last-child { border-bottom:0; }
+  @media (max-width:700px) { .job { grid-template-columns:1fr; gap:6px; } }
+  .job time { font-family:var(--f-mono); font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .job h3 { margin:0; font-family:var(--f-display); font-size:19px; }
+  .job .org { color:var(--accent); font-weight:600; margin:2px 0 10px; }
+  .job ul { margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; }
+
+  /* skills */
+  .skills { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; }
+  @media (max-width:900px) { .skills { grid-template-columns:repeat(2, minmax(0,1fr)); } }
+  @media (max-width:560px) { .skills { grid-template-columns:1fr; } }
+  .skill { padding:20px 22px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); min-width:0; }
+  .skill h3 { margin:0 0 10px; font-family:var(--f-mono); font-size:12.5px; font-weight:500; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
+  .skill p { margin:0; font-weight:500; }
+
+  /* education etc */
+  .facts { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:32px; }
+  @media (max-width:860px) { .facts { grid-template-columns:1fr; gap:28px; } }
+  .facts h3 { font-family:var(--f-mono); font-size:12.5px; font-weight:500; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+  .facts b { display:block; font-family:var(--f-display); font-weight:600; font-size:17px; }
+  .facts p { margin:4px 0 0; color:var(--muted); }
+  .facts ul { margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; }
+
+  /* contact */
+  .contact { background:var(--ink); color:var(--bg); border-radius:14px; padding:44px clamp(22px, 5vw, 56px); display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:32px; align-items:center; }
+  @media (max-width:820px) { .contact { grid-template-columns:1fr; } }
+  .contact h2 { font-family:var(--f-display); font-size:clamp(26px, 3.6vw, 34px); letter-spacing:-.6px; margin:0 0 10px; text-wrap:balance; }
+  .contact p { margin:0; opacity:.75; }
+  .contact-list { display:grid; gap:10px; }
+  .contact-item { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-radius:8px; border:1px solid color-mix(in srgb, var(--bg) 22%, transparent); min-width:0; }
+  .contact-item .lbl { font-family:var(--f-mono); font-size:11.5px; letter-spacing:1px; text-transform:uppercase; opacity:.6; display:block; }
+  .contact-item a, .contact-item .val { color:var(--bg); font-weight:600; overflow-wrap:anywhere; user-select:all; }
+  .copy { flex:none; font-family:inherit; font-size:13px; font-weight:600; padding:6px 12px; border-radius:6px; border:0; background:var(--bg); color:var(--ink); cursor:pointer; }
+
+  footer { padding-block:32px 48px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  @media (prefers-reduced-motion: no-preference) { .card, .btn, .chip { transition:border-color .15s, background .15s, color .15s; } }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top"><span class="mono">EG</span> Elradi Gabraldar</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="ar-name" lang="ar" dir="rtl">الرضي جبرالدار الرضي</p>
+      <h1>Elradi Gabraldar Elradi</h1>
+      <p class="role">Software Engineer · Full-Stack &amp; Mobile</p>
+      <p class="lede">I build production web and mobile products with Next.js, React Native and Flutter, on PostgreSQL and Odoo backends. Five years in, my work spans multi-tenant SaaS, payment integrations and Arabic-first, bilingual apps for education, HR, fintech and legal services.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">View projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="Elradi_Gabraldar_CV.pdf" download>Download CV (PDF)</a>
+      </div>
+    </div>
+    <aside class="spec" aria-label="At a glance">
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Now</dt><dd><span class="status">Software Engineer at Osoolsys</span></dd>
+        <dt>Based in</dt><dd>Riyadh, Saudi Arabia</dd>
+        <dt>Experience</dt><dd>5 years</dd>
+        <dt>Ships to</dt><dd>Web, iOS, Android, Odoo</dd>
+        <dt>Core stack</dt><dd>Next.js, TypeScript, React Native, Flutter, PostgreSQL</dd>
+        <dt>Languages</dt><dd>Arabic (native), English</dd>
+        <dt>Interfaces</dt><dd>RTL and LTR, light and dark</dd>
+      </dl>
+    </aside>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Selected work</h2>
+        <p>Products I built at Osoolsys, from school management to restaurant point of sale.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip" id="f-all" data-f="all" aria-pressed="true">All <span class="n"></span></button>
+        <button class="chip" id="f-web" data-f="web" aria-pressed="false">Web <span class="n"></span></button>
+        <button class="chip" id="f-mobile" data-f="mobile" aria-pressed="false">Mobile <span class="n"></span></button>
+        <button class="chip" id="f-odoo" data-f="odoo" aria-pressed="false">Odoo <span class="n"></span></button>
+      </div>
+
+      <div class="grid" id="projects">
+        <article class="card feature" data-tags="odoo mobile">
+          <div class="kind"><span>Odoo 19</span><span>React Native</span><span>School management</span></div>
+          <h3>Nadhir <span class="ar" lang="ar">ناظر</span> — School Management Platform &amp; Parent/Student App</h3>
+          <div class="feature-body">
+            <p>A school platform on Odoo 19 and OpenEduCat that replaces a legacy Odoo 13 system. Sixteen custom modules cover students, attendance, homework, exams, fees, admissions, school buses, a cafeteria with prepaid student wallets, school stores and Saudi payroll (GOSI, end-of-service award, WPS salary transfer).</p>
+            <ul>
+              <li>Mobile REST API with per-device hashed tokens and 90-day sliding expiry.</li>
+              <li>React Native app for students and parents: classes, homework, schedule, exams, report cards, bills and notifications.</li>
+              <li>Full Nadhir branding over Odoo, deployed with Docker, GitHub Actions and Flux to a K3s cluster.</li>
+            </ul>
+          </div>
+          <div class="stack"><span>Odoo 19</span><span>OpenEduCat</span><span>Python</span><span>PostgreSQL</span><span>React Native</span><span>Expo</span><span>TypeScript</span><span>TanStack Query</span><span>Docker</span><span>K3s / Flux</span></div>
+        </article>
+
+        <article class="card" data-tags="web">
+          <div class="kind"><span>Laravel</span><span>SaaS</span></div>
+          <h3>eNoor — Online &amp; Paper Exam Platform</h3>
+          <p>Arabic-first, multi-tenant SaaS. Institutions write question banks, students sit timed exams online, and paper OMR exams are printed, scanned and graded automatically. Roles, subscription billing through EdfaPay and scheduled jobs.</p>
+          <div class="stack"><span>Laravel 12</span><span>Inertia</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span></div>
+        </article>
+
+        <article class="card" data-tags="mobile">
+          <div class="kind"><span>React Native</span><span>Computer vision</span></div>
+          <h3>eNoor Scanner — Bubble-Sheet Grading App</h3>
+          <p>Instructors scan answer sheets with the phone camera. Student ID and answers are read on the device, and results upload in batches. Works offline with retries, supports five sheet models, and has in-app purchases.</p>
+          <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>TanStack Query</span><span>NativeWind</span></div>
+        </article>
+
+        <article class="card" data-tags="mobile odoo">
+          <div class="kind"><span>React Native</span><span>Odoo</span><span>HR</span></div>
+          <h3>Bayan — HR Attendance System</h3>
+          <p>Employees punch in and out inside a GPS geofence; managers approve leave and corrections. I built the Odoo backend (invite-code login, one device per employee, server-side geofencing, anti-cheat scoring, license activation) for Odoo 17, 18 and 19, and moved the app from Flutter to React Native.</p>
+          <div class="stack"><span>React Native</span><span>Flutter</span><span>Odoo</span><span>Python</span><span>PostgreSQL</span></div>
+        </article>
+
+        <article class="card" data-tags="web">
+          <div class="kind"><span>Next.js</span><span>EdTech</span></div>
+          <h3>Tadreeby — Student Training Platform</h3>
+          <p>Connects students, companies and universities: staged application approval, training contracts, tasks, grading. Eight roles with their own dashboards, paid plans, bulk CSV/Excel import and PDF generation, plus a companion Flutter app.</p>
+          <div class="stack"><span>Next.js 16</span><span>React 19</span><span>Prisma</span><span>PostgreSQL</span><span>NextAuth</span><span>AWS S3</span></div>
+        </article>
+
+        <article class="card" data-tags="web">
+          <div class="kind"><span>Next.js</span><span>Payments</span></div>
+          <h3>Osool Pay — Payment Hub</h3>
+          <p>One service between the company's apps and the EdfaPay gateway. It receives payment webhooks, records which app owns each order, forwards events signed with HMAC-SHA256 and shows per-app totals. A new app connects through settings, with no code changes.</p>
+          <div class="stack"><span>Next.js 16</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>Vitest</span><span>Docker</span></div>
+        </article>
+
+        <article class="card" data-tags="mobile">
+          <div class="kind"><span>Flutter</span><span>Food ordering</span></div>
+          <h3>N.line — Food Ordering &amp; Curbside Pickup</h3>
+          <p>Customers order from restaurants and tap "I arrived" to share their location and car details, and staff bring the order out. Live maps and routes, card payment through EdfaPay, Firebase push notifications and guest checkout.</p>
+          <div class="stack"><span>Flutter</span><span>GetX</span><span>Google Maps</span><span>Firebase</span><span>EdfaPay</span></div>
+        </article>
+
+        <article class="card" data-tags="mobile">
+          <div class="kind"><span>Flutter</span><span>Point of sale</span></div>
+          <h3>N.line Partner — Restaurant POS</h3>
+          <p>POS app for Sunmi handheld devices. Orders arrive live over WebSocket with sound and vibration alerts; staff accept and track them, manage the menu and print receipts on the built-in thermal printer. Clean Architecture with BLoC.</p>
+          <div class="stack"><span>Flutter</span><span>BLoC</span><span>WebSocket</span><span>Sunmi SDK</span><span>Odoo API</span></div>
+        </article>
+
+        <article class="card" data-tags="mobile odoo">
+          <div class="kind"><span>React Native</span><span>Legal</span></div>
+          <h3>Al-Refaei Law Firm — Client App</h3>
+          <p>Clients log in with OTP, follow their cases by stage, lawyer and hearing dates, book appointments, send legal inquiries and pay invoices. Connected to the firm's Odoo system through a typed API client.</p>
+          <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>i18next</span></div>
+        </article>
+
+        <article class="card" data-tags="web">
+          <div class="kind"><span>Next.js</span><span>Websites</span></div>
+          <h3>Osoolsys Website &amp; Other Products</h3>
+          <p>The bilingual company website with all content managed in Payload CMS, DaftarPay landing pages, a domains and companies management app, and updates to a Flutter event-ticket app.</p>
+          <div class="stack"><span>Next.js 16</span><span>Payload CMS</span><span>PostgreSQL</span><span>Playwright</span></div>
+        </article>
+      </div>
+
+      <div class="earlier">
+        <h3>Academic &amp; personal projects</h3>
+        <div class="rows">
+          <div class="row"><time>12/2021</time><div><b>COVID-19 Detection from Chest X-Rays <span class="badge">1st place</span></b><span>Bachelor's thesis: a deep-learning image classifier in PyTorch. Full score, and first place among the college's top ten graduation projects.</span></div></div>
+          <div class="row"><time>02/2022</time><div><b>Deli-Meals (Flutter)</b><span>Recipe app with categories, step-by-step instructions, favorites and dietary filters.</span></div></div>
+          <div class="row"><time>02/2022</time><div><b>Clinic Reservation (Flutter)</b><span>Browse doctors by specialty, see free slots, and book or cancel appointments over a REST API.</span></div></div>
+          <div class="row"><time>03/2022</time><div><b>Daily Expenses Tracker (Flutter)</b><span>Log expenses and see the last 7 days of spending on a bar chart.</span></div></div>
+          <div class="row"><time>05/2022</time><div><b>Lost &amp; Found (Flutter)</b><span>Report lost or found items with photos and location, search posts and contact the poster.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2>Experience</h2></div>
+      <div class="timeline">
+        <div class="job">
+          <time>2023 – Present</time>
+          <div>
+            <h3>Software Engineer</h3>
+            <p class="org">Osoolsys Company for Information Technology · Riyadh</p>
+            <ul>
+              <li>Build and maintain full-stack platforms with Next.js, React, TypeScript, Prisma and PostgreSQL, from database design to Docker deployment.</li>
+              <li>Develop iOS and Android apps with React Native (Expo) and Flutter: GPS geofencing, camera document scanning, offline sync, in-app purchases.</li>
+              <li>Built the central payment hub connecting company products to EdfaPay, with webhook routing and HMAC signing.</li>
+              <li>Extend Odoo 17/18/19 with custom Python modules and REST APIs, and build Laravel + Inertia/React apps.</li>
+              <li>Deliver Arabic-first, bilingual interfaces with role-based access, multi-tenancy and authentication (NextAuth, JWT, Sanctum).</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <time>2021 – 2023</time>
+          <div>
+            <h3>Freelance Flutter Developer</h3>
+            <p class="org">Remote</p>
+            <ul><li>Designed and built cross-platform mobile apps for clients with Flutter and Dart, integrated with REST APIs.</li></ul>
+          </div>
+        </div>
+        <div class="job">
+          <time>06/2022</time>
+          <div>
+            <h3>Software Engineer Trainee</h3>
+            <p class="org">Bashayeer Pipeline Company · Khartoum</p>
+            <ul><li>Worked with the engineering team across the development lifecycle of internal systems.</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2>Skills</h2></div>
+      <div class="skills">
+        <div class="skill"><h3>Languages</h3><p>TypeScript, JavaScript, Dart, Python, PHP, SQL</p></div>
+        <div class="skill"><h3>Web</h3><p>Next.js (App Router, SSR), React, Tailwind CSS, shadcn/ui, TanStack, React Hook Form, Zod, Laravel, Inertia.js</p></div>
+        <div class="skill"><h3>Mobile</h3><p>React Native, Expo (Router, EAS), Flutter, GetX, BLoC, App Store and Play Store publishing, offline-first</p></div>
+        <div class="skill"><h3>Backend &amp; data</h3><p>REST APIs, Prisma, PostgreSQL, NextAuth, JWT, Sanctum, Odoo modules and APIs, Payload CMS</p></div>
+        <div class="skill"><h3>DevOps &amp; tools</h3><p>Docker, Docker Compose, Git, GitHub Actions, AWS S3, K3s, Bun, Vitest, PHPUnit, Playwright</p></div>
+        <div class="skill"><h3>AI &amp; LLMs</h3><p>Coding agents (Claude Code, Cursor, Copilot), LLM API integration (Claude, OpenAI), prompt engineering</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap facts">
+      <div>
+        <h3>Education</h3>
+        <b>B.Sc. (Honours) in Computer Science</b>
+        <p>Omdurman Islamic University · 12/2021</p>
+        <p>Graduation project grade: Excellent</p>
+      </div>
+      <div>
+        <h3>Award</h3>
+        <b>First Place, Graduation Projects Award</b>
+        <p>Omdurman Islamic University · 12/2021</p>
+        <p>Won with 47 points (second place 40, third 35).</p>
+      </div>
+      <div>
+        <h3>Courses</h3>
+        <ul>
+          <li>The Complete Flutter Development Bootcamp with Dart (Udemy)</li>
+          <li>Flutter &amp; Firebase: Build a Complete App for iOS &amp; Android (Udemy)</li>
+          <li>Complete Flutter Development Course (Udemy, Academind)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's build something together.</h2>
+          <p>Open to full-stack and mobile engineering roles in Riyadh or remote.</p>
+        </div>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div><span class="lbl">Email</span><a id="email" href="mailto:elradi2017@gmail.com">elradi2017@gmail.com</a></div>
+            <button class="copy" id="copy-email" type="button">Copy</button>
+          </div>
+          <div class="contact-item">
+            <div><span class="lbl">LinkedIn</span><a href="https://linkedin.com/in/elradi-gabraldar-elradi-086a53219" target="_blank" rel="noopener">elradi-gabraldar-elradi</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <span>© <span id="yr">2026</span> Elradi Gabraldar Elradi</span>
+    <span>Riyadh, Saudi Arabia</span>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#projects .card'));
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+    chips.forEach(function (c) {
+      var f = c.getAttribute('data-f');
+      var n = f === 'all' ? cards.length : cards.filter(function (k) { return k.dataset.tags.split(' ').indexOf(f) > -1; }).length;
+      c.querySelector('.n').textContent = n;
+      c.addEventListener('click', function () {
+        chips.forEach(function (o) { o.setAttribute('aria-pressed', o === c ? 'true' : 'false'); });
+        cards.forEach(function (k) { k.hidden = !(f === 'all' || k.dataset.tags.split(' ').indexOf(f) > -1); });
+      });
+    });
+    var btn = document.getElementById('copy-email');
+    btn.addEventListener('click', function () {
+      var text = 'elradi2017@gmail.com';
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      var fallback = function () { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); } else { fallback(); }
+    });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>

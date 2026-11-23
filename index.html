@@ -143,6 +143,12 @@
 
   footer { padding-block:32px 48px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   @media (prefers-reduced-motion: no-preference) { .card, .btn, .chip { transition:border-color .15s, background .15s, color .15s; } }
+  /* project links (filled from links.json) */
+  .links { display:flex; flex-wrap:wrap; gap:8px; }
+  .links:empty { display:none; }
+  .links a { display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:600; padding:6px 12px; border-radius:8px; border:1px solid var(--line); color:var(--ink); background:var(--bg); }
+  .links a:hover { border-color:var(--accent); color:var(--accent); text-decoration:none; }
+  .links svg { width:15px; height:15px; flex:none; }
 </style>
 </head>
 <body>
@@ -197,7 +203,7 @@
       </div>
 
       <div class="grid" id="projects">
-        <article class="card feature" data-tags="odoo mobile">
+        <article class="card feature" data-id="nadhir" data-tags="odoo mobile">
           <div class="kind"><span>Odoo 19</span><span>React Native</span><span>School management</span></div>
           <h3>Nadhir <span class="ar" lang="ar">ناظر</span> — School Management Platform &amp; Parent/Student App</h3>
           <div class="feature-body">
@@ -208,69 +214,86 @@
               <li>Full Nadhir branding over Odoo, deployed with Docker, GitHub Actions and Flux to a K3s cluster.</li>
             </ul>
           </div>
+          <div class="links"></div>
           <div class="stack"><span>Odoo 19</span><span>OpenEduCat</span><span>Python</span><span>PostgreSQL</span><span>React Native</span><span>Expo</span><span>TypeScript</span><span>TanStack Query</span><span>Docker</span><span>K3s / Flux</span></div>
         </article>
 
-        <article class="card" data-tags="web">
+        <article class="card feature" data-id="tadreeby" data-tags="web mobile">
+          <div class="kind"><span>Next.js</span><span>Flutter</span><span>EdTech</span></div>
+          <h3>Tadreeby <span class="ar" lang="ar">تدريبي</span> — Student Training Platform &amp; Mobile App</h3>
+          <div class="feature-body">
+            <p>A cooperative-training platform for Saudi Arabia that connects students, companies and universities. I built it end to end: the full-stack web platform and the Flutter mobile app for students, live on the App Store and Google Play.</p>
+            <ul>
+              <li>Web: staged application approval, training contracts, tasks, submissions, skills and grading, with eight roles and a dashboard for each, paid plans, bulk CSV/Excel import and PDF generation.</li>
+              <li>Mobile (Flutter, Arabic RTL): OTP sign-in, browse companies and apply for training, follow tasks and skills, see scores, generate a CV and upgrade to premium with in-app payment.</li>
+            </ul>
+          </div>
+          <div class="links"></div>
+          <div class="stack"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>NextAuth</span><span>AWS S3</span><span>Flutter</span><span>Dart</span><span>GetX</span></div>
+        </article>
+
+        <article class="card" data-id="enoor" data-tags="web">
           <div class="kind"><span>Laravel</span><span>SaaS</span></div>
           <h3>eNoor — Online &amp; Paper Exam Platform</h3>
           <p>Arabic-first, multi-tenant SaaS. Institutions write question banks, students sit timed exams online, and paper OMR exams are printed, scanned and graded automatically. Roles, subscription billing through EdfaPay and scheduled jobs.</p>
+          <div class="links"></div>
           <div class="stack"><span>Laravel 12</span><span>Inertia</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span></div>
         </article>
 
-        <article class="card" data-tags="mobile">
+        <article class="card" data-id="enoor-scanner" data-tags="mobile">
           <div class="kind"><span>React Native</span><span>Computer vision</span></div>
           <h3>eNoor Scanner — Bubble-Sheet Grading App</h3>
           <p>Instructors scan answer sheets with the phone camera. Student ID and answers are read on the device, and results upload in batches. Works offline with retries, supports five sheet models, and has in-app purchases.</p>
+          <div class="links"></div>
           <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>TanStack Query</span><span>NativeWind</span></div>
         </article>
 
-        <article class="card" data-tags="mobile odoo">
+        <article class="card" data-id="bayan" data-tags="mobile odoo">
           <div class="kind"><span>React Native</span><span>Odoo</span><span>HR</span></div>
           <h3>Bayan — HR Attendance System</h3>
           <p>Employees punch in and out inside a GPS geofence; managers approve leave and corrections. I built the Odoo backend (invite-code login, one device per employee, server-side geofencing, anti-cheat scoring, license activation) for Odoo 17, 18 and 19, and moved the app from Flutter to React Native.</p>
+          <div class="links"></div>
           <div class="stack"><span>React Native</span><span>Flutter</span><span>Odoo</span><span>Python</span><span>PostgreSQL</span></div>
         </article>
 
-        <article class="card" data-tags="web">
-          <div class="kind"><span>Next.js</span><span>EdTech</span></div>
-          <h3>Tadreeby — Student Training Platform</h3>
-          <p>Connects students, companies and universities: staged application approval, training contracts, tasks, grading. Eight roles with their own dashboards, paid plans, bulk CSV/Excel import and PDF generation, plus a companion Flutter app.</p>
-          <div class="stack"><span>Next.js 16</span><span>React 19</span><span>Prisma</span><span>PostgreSQL</span><span>NextAuth</span><span>AWS S3</span></div>
-        </article>
 
-        <article class="card" data-tags="web">
+        <article class="card" data-id="osool-pay" data-tags="web">
           <div class="kind"><span>Next.js</span><span>Payments</span></div>
           <h3>Osool Pay — Payment Hub</h3>
           <p>One service between the company's apps and the EdfaPay gateway. It receives payment webhooks, records which app owns each order, forwards events signed with HMAC-SHA256 and shows per-app totals. A new app connects through settings, with no code changes.</p>
+          <div class="links"></div>
           <div class="stack"><span>Next.js 16</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>Vitest</span><span>Docker</span></div>
         </article>
 
-        <article class="card" data-tags="mobile">
+        <article class="card" data-id="nline" data-tags="mobile">
           <div class="kind"><span>Flutter</span><span>Food ordering</span></div>
           <h3>N.line — Food Ordering &amp; Curbside Pickup</h3>
           <p>Customers order from restaurants and tap "I arrived" to share their location and car details, and staff bring the order out. Live maps and routes, card payment through EdfaPay, Firebase push notifications and guest checkout.</p>
+          <div class="links"></div>
           <div class="stack"><span>Flutter</span><span>GetX</span><span>Google Maps</span><span>Firebase</span><span>EdfaPay</span></div>
         </article>
 
-        <article class="card" data-tags="mobile">
+        <article class="card" data-id="nline-partner" data-tags="mobile">
           <div class="kind"><span>Flutter</span><span>Point of sale</span></div>
           <h3>N.line Partner — Restaurant POS</h3>
           <p>POS app for Sunmi handheld devices. Orders arrive live over WebSocket with sound and vibration alerts; staff accept and track them, manage the menu and print receipts on the built-in thermal printer. Clean Architecture with BLoC.</p>
+          <div class="links"></div>
           <div class="stack"><span>Flutter</span><span>BLoC</span><span>WebSocket</span><span>Sunmi SDK</span><span>Odoo API</span></div>
         </article>
 
-        <article class="card" data-tags="mobile odoo">
+        <article class="card" data-id="alrefaei" data-tags="mobile odoo">
           <div class="kind"><span>React Native</span><span>Legal</span></div>
           <h3>Al-Refaei Law Firm — Client App</h3>
           <p>Clients log in with OTP, follow their cases by stage, lawyer and hearing dates, book appointments, send legal inquiries and pay invoices. Connected to the firm's Odoo system through a typed API client.</p>
+          <div class="links"></div>
           <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>i18next</span></div>
         </article>
 
-        <article class="card" data-tags="web">
+        <article class="card" data-id="osoolsys-web" data-tags="web">
           <div class="kind"><span>Next.js</span><span>Websites</span></div>
           <h3>Osoolsys Website &amp; Other Products</h3>
           <p>The bilingual company website with all content managed in Payload CMS, DaftarPay landing pages, a domains and companies management app, and updates to a Flutter event-ticket app.</p>
+          <div class="links"></div>
           <div class="stack"><span>Next.js 16</span><span>Payload CMS</span><span>PostgreSQL</span><span>Playwright</span></div>
         </article>
       </div>
@@ -411,6 +434,29 @@
       var fallback = function () { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; };
       if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); } else { fallback(); }
     });
+    var ICONS = {
+      website: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+      appStore: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.6-1-2.6-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg>',
+      googlePlay: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l9.5-9.8L3.6 2.2zm10.6 8.7 2.7-2.8L5.2 1.4c-.3-.2-.6-.2-.9-.1l9.9 9.6zm0 2.2-9.9 9.6c.3.1.6.1.9-.1l11.7-6.7-2.7-2.8zm6.2-2.7-2.6-1.5-3 3.1 3 3.1 2.6-1.5c.8-.5.8-1.7 0-3.2z"/></svg>',
+      github: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4.8 18 5.1 18 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>',
+      demo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></svg>'
+    };
+    var LABELS = { website:'Website', appStore:'App Store', googlePlay:'Google Play', github:'Code', demo:'Demo' };
+    fetch('links.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : {}; }).then(function (data) {
+      document.querySelectorAll('[data-id]').forEach(function (card) {
+        var box = card.querySelector('.links'); var l = data[card.getAttribute('data-id')];
+        if (!box || !l) return;
+        Object.keys(LABELS).forEach(function (k) {
+          var url = (l[k] || '').trim();
+          if (!/^https?:\/\//.test(url)) return;
+          var a = document.createElement('a');
+          a.href = url; a.target = '_blank'; a.rel = 'noopener';
+          a.innerHTML = ICONS[k] + '<span>' + LABELS[k] + '</span>';
+          a.setAttribute('aria-label', LABELS[k] + ': ' + card.querySelector('h3').textContent.split(' — ')[0].trim());
+          box.appendChild(a);
+        });
+      });
+    }).catch(function () {});
     document.getElementById('yr').textContent = new Date().getFullYear();
   })();
 </script>

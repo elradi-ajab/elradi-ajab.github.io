@@ -1,0 +1,14 @@
+{
+  "_help": "Edit the links below. Leave a link as \"\" to hide its button. Keys: website, appStore, googlePlay, github, demo. Every link must start with https://",
+
+  "nadhir":        { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "tadreeby":      { "website": "https://tadreeby.sa", "appStore": "https://apps.apple.com/sa/app/tadreeby/id6757263261", "googlePlay": "https://play.google.com/store/apps/details?id=com.tadreeby.app", "github": "", "demo": "" },
+  "enoor":         { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "enoor-scanner": { "website": "", "appStore": "https://apps.apple.com/sa/app/enoor/id6807815922", "googlePlay": "https://play.google.com/store/apps/details?id=com.osoolsys.enoor", "github": "", "demo": "" },
+  "bayan":         { "website": "", "appStore": "https://apps.apple.com/sa/app/%D8%A8%D9%8A%D8%A7%D9%86/id6758246354", "googlePlay": "https://play.google.com/store/apps/details?id=com.osoolsys.attendance", "github": "", "demo": "" },
+  "osool-pay":     { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "nline":         { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "nline-partner": { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "alrefaei":      { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "osoolsys-web":  { "website": "https://osoolsys.sa", "appStore": "", "googlePlay": "", "github": "", "demo": "" }
+}

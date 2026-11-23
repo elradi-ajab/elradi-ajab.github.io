@@ -1,0 +1,10 @@
+{
+  "_help": "Project screenshots. Upload images into the images/<project>/ folder, then list them here in the order you want. The first 3 show on the home page card; all of them show on the project page. type: \"phone\" for app screens (portrait), \"web\" for website or dashboard screenshots (landscape). Projects with no images show a clean name tile.",
+
+  "tadreeby":  { "type": "phone", "images": ["images/tadreeby/4.jpg", "images/tadreeby/2.jpg", "images/tadreeby/6.jpg", "images/tadreeby/3.jpg", "images/tadreeby/5.jpg", "images/tadreeby/1.jpg"] },
+  "nadhir":    { "type": "web",   "images": [] },
+  "enoor":     { "type": "phone", "images": ["images/enoor/1.jpg", "images/enoor/2.jpg", "images/enoor/4.jpg", "images/enoor/3.jpg", "images/enoor/5.jpg", "images/enoor/6.jpg"] },
+  "nline":     { "type": "phone", "images": ["images/nline/1.jpg", "images/nline/2.jpg", "images/nline/4.jpg", "images/nline/3.jpg"] },
+  "bayan":     { "type": "phone", "images": ["images/bayan/1.jpg", "images/bayan/3.jpg", "images/bayan/5.jpg", "images/bayan/4.jpg", "images/bayan/2.jpg", "images/bayan/6.jpg"] },
+  "osool-pay": { "type": "web",   "images": [] }
+}

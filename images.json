@@ -6,5 +6,5 @@
   "enoor":     { "type": "phone", "images": ["images/enoor/1.jpg", "images/enoor/2.jpg", "images/enoor/4.jpg", "images/enoor/3.jpg", "images/enoor/5.jpg", "images/enoor/6.jpg"] },
   "nline":     { "type": "phone", "images": ["images/nline/1.jpg", "images/nline/2.jpg", "images/nline/4.jpg", "images/nline/3.jpg"] },
   "bayan":     { "type": "phone", "images": ["images/bayan/1.jpg", "images/bayan/3.jpg", "images/bayan/5.jpg", "images/bayan/4.jpg", "images/bayan/2.jpg", "images/bayan/6.jpg"] },
-  "osool-pay": { "type": "web",   "images": [] }
+  "osool-pay": { "type": "web",   "images": ["images/osool-pay/1.jpg", "images/osool-pay/2.jpg", "images/osool-pay/3.jpg"] }
 }

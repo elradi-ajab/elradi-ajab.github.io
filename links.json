@@ -1,7 +1,7 @@
 {
   "_help": "Edit the links below. Leave a link as \"\" to hide its button. Keys: website, appStore, googlePlay, github, demo. Every link must start with https://",
 
-  "nadhir":        { "website": "", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
+  "nadhir":        { "website": "", "appStore": "https://apps.apple.com/us/app/nadhir/id6836309976", "googlePlay": "", "github": "", "demo": "" },
   "tadreeby":      { "website": "https://tadreeby.sa", "appStore": "https://apps.apple.com/sa/app/tadreeby/id6757263261", "googlePlay": "https://play.google.com/store/apps/details?id=com.tadreeby.app", "github": "", "demo": "" },
   "enoor":         { "website": "https://enoor.osoolsys.sa", "appStore": "", "googlePlay": "", "github": "", "demo": "" },
   "enoor-scanner": { "website": "", "appStore": "https://apps.apple.com/sa/app/enoor/id6807815922", "googlePlay": "https://play.google.com/store/apps/details?id=com.osoolsys.enoor", "github": "", "demo": "" },
